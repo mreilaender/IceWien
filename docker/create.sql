@@ -11,21 +11,26 @@ CREATE TABLE parlor (
   name VARCHAR(255),
   latitude DECIMAL(10,8),
   longitude DECIMAL(10,8),
-  beg_time TIME,
-  end_time TIME,
+  opening_time TIME,
+  closing_time TIME,
   street VARCHAR(255),
   street_numb INTEGER,
   zip INTEGER,
   phone VARCHAR(255),
-  menu VARCHAR(255),
+  menu VARCHAR(255) DEFAULT NULL,
   PRIMARY KEY (id)
 );
 
 CREATE TABLE flavour (
   name VARCHAR(255),
-  checked BOOLEAN,
+  checked BOOLEAN DEFAULT FALSE,
   PRIMARY KEY (name)
 );
+
+INSERT INTO flavour (name, checked) VALUES ('Vanille', TRUE), ('Haselnuss', TRUE), ('Fiocco', TRUE), ('Cacao', TRUE), ('Cookie', TRUE);
+INSERT INTO flavour (name, checked) VALUES ('Zitrone', TRUE), ('Stracciatella', TRUE), ('Cranberry', TRUE), ('Mango-Creme', TRUE), ('Raffaello', TRUE);
+INSERT INTO flavour (name, checked) VALUES ('Kaffee', TRUE), ('Malaga', TRUE), ('Nocciolone', TRUE), ('Pistazie', TRUE);
+INSERT INTO flavour (name, checked) VALUES ('Marille', TRUE), ('Amarena', TRUE), ('Banane', TRUE), ('Erdbeer', TRUE);
 
 CREATE TABLE user (
   uid INTEGER AUTO_INCREMENT,
