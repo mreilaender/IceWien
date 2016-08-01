@@ -23,8 +23,10 @@ CREATE TABLE parlor (
 
 CREATE TABLE flavour (
   name VARCHAR(255),
-  checked BOOLEAN DEFAULT FALSE,
-  PRIMARY KEY (name)
+  confirmed BOOLEAN DEFAULT FALSE,
+  parlor_id INTEGER,
+  PRIMARY KEY (name),
+  FOREIGN KEY (parlor_id) REFERENCES parlor (id)
 );
 
 INSERT INTO flavour (name, checked) VALUES ('Vanille', TRUE), ('Haselnuss', TRUE), ('Fiocco', TRUE), ('Cacao', TRUE), ('Cookie', TRUE);
@@ -45,6 +47,7 @@ CREATE TABLE vote (
   date TIMESTAMP,
   ranking INTEGER(5),
   uid INTEGER,
+  parlor_id INTEGER,
   PRIMARY KEY (date, uid),
   FOREIGN KEY (uid) REFERENCES user (uid)
 );
