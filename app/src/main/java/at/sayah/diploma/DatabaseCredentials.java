@@ -9,4 +9,5 @@ public interface DatabaseCredentials {
     String USERNAME = "user";
     String PASSWORD = "password";
     int PORT = 3306;
+
 }
