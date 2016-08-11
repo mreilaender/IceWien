@@ -10,4 +10,5 @@ public interface DatabaseCredentials {
     String PASSWORD = "password";
     int PORT = 3306;
 
+    String JDBC_URL = "jdbc:mysql://" + HOST + ":" + PORT + "/" + DATABASE;
 }
