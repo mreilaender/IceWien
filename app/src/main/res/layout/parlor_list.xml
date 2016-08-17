@@ -11,17 +11,13 @@
         tools:context=".ParlorListView">
 
     <ListView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="153dp"
+            android:layout_height="145dp"
             android:id="@+id/list_parlor"
-            android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" android:layout_alignParentBottom="true"
-            android:choiceMode="singleChoice"/>
-    <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Switch"
-            android:id="@+id/asd" android:layout_alignParentTop="true" android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" android:layout_marginRight="45dp" android:layout_marginEnd="45dp"
-            android:layout_marginTop="141dp" android:checked="false"/>
+            android:choiceMode="singleChoice"
+            android:layout_gravity="bottom"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"/>
 </RelativeLayout>
