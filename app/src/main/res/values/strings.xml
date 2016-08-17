@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">IceWien</string>
+    <string name="parlor_image_descr">Parlor Image</string>
+    <string name="parlor_opening_time">Opening time</string>
 </resources>
