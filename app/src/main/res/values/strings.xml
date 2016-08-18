@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">IceWien</string>
+    <string name="parlor_name">HierEisGeschäftName</string>
     <string name="parlor_image_descr">Parlor Image</string>
-    <string name="parlor_opening_time">Opening time</string>
+    <string name="parlor_street_name">Straßenname:</string>
+    <string name="parlor_tele_number">Telefon Nummer:</string>
+    <string name="parlor_opening_time">Öffnungszeit:</string>
 </resources>
