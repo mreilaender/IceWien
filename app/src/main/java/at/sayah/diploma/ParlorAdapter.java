@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class ParlorAdapter extends ArrayAdapter<Parlor> {
 
-    private final String TAG = "ParlorAdapter";
+    private static final String TAG = "ParlorAdapter";
 
     public ParlorAdapter(Context context, int resource, List<Parlor> items) {
         super(context, resource, items);
@@ -28,8 +28,6 @@ public class ParlorAdapter extends ArrayAdapter<Parlor> {
         if(convertView == null) {
             LayoutInflater inflater = LayoutInflater.from(getContext());
             convertView = inflater.inflate(android.R.layout.simple_list_item_1, null);
-        } else {
-
         }
         Parlor parlor = getItem(position);
         if(parlor != null) {

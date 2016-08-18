@@ -36,55 +36,56 @@
             android:layout_below="@+id/frameLayout" android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true">
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="57dp"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/parlor_name"
-                android:id="@+id/textView2" android:layout_row="0" android:layout_column="0"
-                android:layout_columnSpan="1" android:textStyle="bold|italic"/>
+            android:layout_width="wrap_content"
+            android:layout_height="57dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/parlor_name"
+            android:id="@+id/parlor_name" android:layout_row="0" android:layout_column="0"
+            android:layout_columnSpan="1" android:textStyle="bold|italic"/>
         <ImageView
                 android:layout_width="95dp"
                 android:layout_height="95dp"
                 android:id="@+id/imageView" android:layout_row="0" android:layout_column="1"/>
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="47dp"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/parlor_street_name"
-                android:id="@+id/textView3" android:layout_row="1" android:layout_column="0"/>
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/parlor_street_name"
+            android:id="@+id/parlor_street_name" android:layout_row="1" android:layout_column="0"/>
         <TextView
-                android:layout_width="224dp"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Platzhalter"
-                android:id="@+id/textView5" android:layout_row="1" android:layout_column="1"/>
+            android:layout_width="224dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Platzhalter"
+            android:id="@+id/parlor_address" android:layout_row="1" android:layout_column="1"/>
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/parlor_opening_time"
-                android:layout_row="2" android:layout_column="0"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/parlor_opening_time"
+            android:layout_row="2" android:layout_column="0"
+            android:id="@+id/parlor_opening_time"/>
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Montag"
-                android:id="@+id/textView6" android:layout_row="2" android:layout_column="1"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Montag"
+            android:id="@+id/parlor_opening_time_mo" android:layout_row="2" android:layout_column="1"/>
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                   android:textAppearance="?android:attr/textAppearanceMedium" android:text="Dienstag"
-                  android:id="@+id/textView7" android:layout_row="3" android:layout_column="1"/>
+                  android:id="@+id/parlor_opening_time_tu" android:layout_row="3" android:layout_column="1"/>
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                   android:textAppearance="?android:attr/textAppearanceMedium" android:text="Mitwoch"
-                  android:id="@+id/textView8" android:layout_row="4" android:layout_column="1"/>
+                  android:id="@+id/parlor_opening_time_we" android:layout_row="4" android:layout_column="1"/>
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                   android:textAppearance="?android:attr/textAppearanceMedium" android:text="Donnerstag"
-                  android:id="@+id/textView9" android:layout_row="5" android:layout_column="1"/>
+                  android:id="@+id/parlor_opening_time_th" android:layout_row="5" android:layout_column="1"/>
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                   android:textAppearance="?android:attr/textAppearanceMedium" android:text="Freitag"
-                  android:id="@+id/textView10" android:layout_row="6" android:layout_column="1"/>
+                  android:id="@+id/parlor_opening_time_fr" android:layout_row="6" android:layout_column="1"/>
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                   android:textAppearance="?android:attr/textAppearanceMedium" android:text="Samstag"
-                  android:id="@+id/textView11" android:layout_row="7" android:layout_column="1"/>
+                  android:id="@+id/parlor_opening_time_sa" android:layout_row="7" android:layout_column="1"/>
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                   android:textAppearance="?android:attr/textAppearanceMedium" android:text="Sonntag"
                   android:id="@+id/textView12" android:layout_row="8" android:layout_column="1"/>

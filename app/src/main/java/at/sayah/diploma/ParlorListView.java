@@ -1,5 +1,6 @@
 package at.sayah.diploma;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,14 +10,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import at.sayah.diploma.entities.Parlor;
+import com.google.gson.Gson;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class ParlorListView extends AppCompatActivity implements AdapterView.OnItemClickListener {
-
-    private Cursor cursor;
     private static final String TAG = "ParlorListView";
 
     @Override
@@ -39,18 +38,12 @@ public class ParlorListView extends AppCompatActivity implements AdapterView.OnI
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        cursor.close();
-    }
-
-    @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
         ArrayAdapter<Parlor> adapter = (ArrayAdapter<Parlor>) adapterView.getAdapter();
-        if(adapter == null) {
-            Log.e(TAG, "adapter is null");
-        } else {
-            Log.e(TAG, adapter.getItem(position).getName());
-        }
+        Parlor parlor = adapter.getItem(position);
+        String json = new Gson().toJson(parlor);
+        Intent intent = new Intent(this, ParlorDetailsView.class);
+        intent.putExtra("parlor", json);
+        startActivity(intent);
     }
 }

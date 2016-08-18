@@ -34,7 +34,6 @@ public class ParlorAsync extends AsyncTask<Integer, Void, List<Parlor>> {
             source.setPassword(DatabaseCredentials.PASSWORD);
             Dao<Parlor, Integer> parlorDao = DaoManager.createDao(source, Parlor.class);
             QueryBuilder<Parlor, Integer> queryBuilder = parlorDao.queryBuilder();
-            queryBuilder.selectColumns("name", "parlor_id");
             queryBuilder.orderBy("name", true);
             iterator = parlorDao.iterator(queryBuilder.prepare());
 
