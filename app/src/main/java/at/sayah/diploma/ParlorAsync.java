@@ -3,6 +3,7 @@ package at.sayah.diploma;
 import android.content.Context;
 import android.database.Cursor;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import at.sayah.diploma.entities.Parlor;
@@ -20,36 +21,33 @@ import java.util.List;
 /**
  * @author mreilaender
  */
-public class ParlorAsync extends AsyncTask<Integer, Void, ArrayAdapter<String>> {
-    private String url = DatabaseCredentials.JDBC_URL;
+public class ParlorAsync extends AsyncTask<Integer, Void, List<Parlor>> {
     private CloseableIterator<Parlor> iterator;
-    private ListView parlor_list;
-    private Context context;
-
-    public ParlorAsync(Context context, ListView parlor_list) {
-        this.parlor_list = parlor_list;
-        this.context = context;
-    }
+    private static final String TAG = "ParlorAsync";
 
     @Override
-    protected ArrayAdapter<String> doInBackground(Integer... ints) {
+    protected List<Parlor> doInBackground(Integer... ints) {
         JdbcConnectionSource source = null;
         try {
-            source = new JdbcConnectionSource(url);
+            source = new JdbcConnectionSource(DatabaseCredentials.JDBC_URL);
             source.setUsername(DatabaseCredentials.USERNAME);
             source.setPassword(DatabaseCredentials.PASSWORD);
             Dao<Parlor, Integer> parlorDao = DaoManager.createDao(source, Parlor.class);
             QueryBuilder<Parlor, Integer> queryBuilder = parlorDao.queryBuilder();
-            queryBuilder.selectColumns("name");
+            queryBuilder.selectColumns("name", "parlor_id");
             queryBuilder.orderBy("name", true);
             iterator = parlorDao.iterator(queryBuilder.prepare());
+
         } catch (SQLException e) {
+            Log.e(TAG, "Error while connecting to database: " + e.getMessage());
             e.printStackTrace();
         }
-        List<String> items = new ArrayList<>();
+        List<Parlor> items = new ArrayList<>();
+        Log.i(TAG, "Downloading Database data");
         while(iterator.hasNext()) {
-            items.add(iterator.next().getName());
+            items.add(iterator.next());
         }
-        return new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, items);
+        return items;
+        //return new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, items);
     }
 }
