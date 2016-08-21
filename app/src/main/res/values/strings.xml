@@ -1,8 +1,19 @@
 <resources>
     <string name="app_name">IceWien</string>
-    <string name="parlor_name">HierEisGeschäftName</string>
+    <string name="parlor_name">Parlor Isola Bella</string>
     <string name="parlor_image_descr">Parlor Image</string>
     <string name="parlor_street_name">Straßenname:</string>
     <string name="parlor_tele_number">Telefon Nummer:</string>
     <string name="parlor_opening_time">Öffnungszeit:</string>
+    <string name="parlor_address">Address:</string>
+    <string name="placeholder">placeholder</string>
+    <string name="closed">closed</string>
+    <!-- Days -->
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
 </resources>
