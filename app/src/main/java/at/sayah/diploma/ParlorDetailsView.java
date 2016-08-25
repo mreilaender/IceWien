@@ -4,8 +4,15 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.PopupMenu;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import at.sayah.diploma.entities.Parlor;
@@ -23,6 +30,9 @@ public class ParlorDetailsView extends AppCompatActivity implements OnMapReadyCa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.parlor_details);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         Intent intent = getIntent();
         String json = (String) intent.getExtras().get("parlor");
@@ -47,6 +57,25 @@ public class ParlorDetailsView extends AppCompatActivity implements OnMapReadyCa
 
         ImageView parlor_image = (ImageView) findViewById(R.id.parlor_image);
         parlor_image.setImageResource(R.drawable.default_parlor_image);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.settings, menu);
+        return true;
+    }
+
+    public void doLogin(MenuItem item) {
+        Log.e(TAG, "It fucking works");
+    }
+
+    public void showPopup(MenuItem item) {
+        View view = findViewById(item.getItemId());
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        MenuInflater inflater = popupMenu.getMenuInflater();
+        inflater.inflate(R.menu.settings_sub, popupMenu.getMenu());
+        popupMenu.show();
     }
 
     @Override

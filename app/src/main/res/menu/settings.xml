@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="at.sayah.diploma.ParlorDetailsView">
+    <item
+        android:id="@+id/action_login"
+        android:orderInCategory="100"
+        android:title="@string/settings_menu"
+        android:icon="@drawable/ic_setting_dark"
+        app:showAsAction="always"
+        android:onClick="showPopup"/>
+</menu>

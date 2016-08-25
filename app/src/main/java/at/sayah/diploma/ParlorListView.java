@@ -4,7 +4,12 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.PopupMenu;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -23,6 +28,9 @@ public class ParlorListView extends AppCompatActivity implements AdapterView.OnI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.parlor_list);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         ListView parlor_list = (ListView) findViewById(R.id.list_parlor);
         try {
             List<Parlor> parlors = new ParlorAsync().execute().get();
@@ -35,6 +43,25 @@ public class ParlorListView extends AppCompatActivity implements AdapterView.OnI
             e.printStackTrace();
             System.out.println("");
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.settings, menu);
+        return true;
+    }
+
+    public void showPopup(MenuItem item) {
+        View view = findViewById(item.getItemId());
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        MenuInflater inflater = popupMenu.getMenuInflater();
+        inflater.inflate(R.menu.settings_sub, popupMenu.getMenu());
+        popupMenu.show();
+    }
+
+    public void doLogin(MenuItem item) {
+
     }
 
     @Override
