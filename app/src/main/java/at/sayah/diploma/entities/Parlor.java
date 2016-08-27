@@ -1,9 +1,5 @@
 package at.sayah.diploma.entities;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 

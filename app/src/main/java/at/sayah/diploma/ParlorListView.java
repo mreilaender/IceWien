@@ -21,7 +21,8 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class ParlorListView extends AppCompatActivity implements AdapterView.OnItemClickListener {
-    private static final String TAG = "ParlorListView";
+    static final String TAG = "ParlorListView";
+    static final String PACKAGE = "at.sayah.diploma";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +62,9 @@ public class ParlorListView extends AppCompatActivity implements AdapterView.OnI
     }
 
     public void doLogin(MenuItem item) {
-
+        Intent intent = new Intent(this, LoginView.class);
+        intent.putExtra("caller", String.format("%s.%s", PACKAGE, TAG));
+        startActivity(intent);
     }
 
     @Override
