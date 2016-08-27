@@ -21,7 +21,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.gson.Gson;
 
-public class ParlorDetailsView extends AppCompatActivity implements OnMapReadyCallback {
+public class ParlorDetailsView extends BaseActivity implements OnMapReadyCallback {
 
     private static final String TAG = "ParlorDetailsView";
     private Parlor parlor;
@@ -57,25 +57,6 @@ public class ParlorDetailsView extends AppCompatActivity implements OnMapReadyCa
 
         ImageView parlor_image = (ImageView) findViewById(R.id.parlor_image);
         parlor_image.setImageResource(R.drawable.default_parlor_image);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.settings, menu);
-        return true;
-    }
-
-    public void doLogin(MenuItem item) {
-        Log.e(TAG, "It fucking works");
-    }
-
-    public void showPopup(MenuItem item) {
-        View view = findViewById(item.getItemId());
-        PopupMenu popupMenu = new PopupMenu(this, view);
-        MenuInflater inflater = popupMenu.getMenuInflater();
-        inflater.inflate(R.menu.settings_sub, popupMenu.getMenu());
-        popupMenu.show();
     }
 
     @Override

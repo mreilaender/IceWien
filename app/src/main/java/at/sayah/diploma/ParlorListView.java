@@ -20,7 +20,7 @@ import com.google.gson.Gson;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-public class ParlorListView extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class ParlorListView extends BaseActivity implements AdapterView.OnItemClickListener {
     static final String TAG = "ParlorListView";
     static final String PACKAGE = "at.sayah.diploma";
 
@@ -51,20 +51,6 @@ public class ParlorListView extends AppCompatActivity implements AdapterView.OnI
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.settings, menu);
         return true;
-    }
-
-    public void showPopup(MenuItem item) {
-        View view = findViewById(item.getItemId());
-        PopupMenu popupMenu = new PopupMenu(this, view);
-        MenuInflater inflater = popupMenu.getMenuInflater();
-        inflater.inflate(R.menu.settings_sub, popupMenu.getMenu());
-        popupMenu.show();
-    }
-
-    public void doLogin(MenuItem item) {
-        Intent intent = new Intent(this, LoginView.class);
-        intent.putExtra("caller", String.format("%s.%s", PACKAGE, TAG));
-        startActivity(intent);
     }
 
     @Override

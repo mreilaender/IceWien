@@ -3,10 +3,9 @@
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="at.sayah.diploma.ParlorDetailsView">
     <item
-        android:id="@+id/action_login"
+        android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/settings_menu"
         android:icon="@drawable/ic_setting_dark"
-        app:showAsAction="always"
-        android:onClick="showPopup"/>
+        app:showAsAction="always"/>
 </menu>
