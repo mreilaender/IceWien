@@ -369,17 +369,28 @@ public class LoginView extends AppCompatActivity implements LoaderCallbacks<Curs
                 results = userDao.iterator(queryBuilder.prepare());
                 if (results.hasNext())
                     return results.next();
-                return null;
+
+                // Register new User
+                User user = new User();
+                user.setEmail(mEmail);
+                user.setIsAdmin(0);
+
+                // Build encrypted password
+                String passwordEncrypted = "";
+                MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
+                messageDigest.update(mPassword.getBytes());
+                byte[] sha256 = messageDigest.digest();
+                passwordEncrypted = String.format("%064x", new java.math.BigInteger(1, sha256));
+                user.setPassword(passwordEncrypted);
+
+                userDao.create(user);
+                return user;
             } catch (SQLException e) {
                 Log.e(TAG, e.getMessage());
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
             }
             return null;
-            // TODO: register the new account here.
-            /*
-            return true;
-
-            return null;
-            */
         }
 
         @Override
