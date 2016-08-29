@@ -64,8 +64,4 @@ public class BaseActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         }
         return false;
     }
-
-    public void setLoggedIn(boolean loggedIn) {
-        this.loggedIn = loggedIn;
-    }
 }

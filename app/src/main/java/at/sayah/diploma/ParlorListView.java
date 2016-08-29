@@ -1,15 +1,9 @@
 package at.sayah.diploma;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -38,19 +32,9 @@ public class ParlorListView extends BaseActivity implements AdapterView.OnItemCl
             ParlorAdapter parlorAdapter = new ParlorAdapter(this, android.R.layout.simple_list_item_1, parlors);
             parlor_list.setAdapter(parlorAdapter);
             parlor_list.setOnItemClickListener(this);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-            System.out.println("");
+        } catch (InterruptedException | ExecutionException e) {
+            Log.e(TAG, e.getMessage());
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.settings, menu);
-        return true;
     }
 
     @Override
