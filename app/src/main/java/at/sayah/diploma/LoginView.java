@@ -329,7 +329,9 @@ public class LoginView extends AppCompatActivity implements LoaderCallbacks<Curs
         int IS_PRIMARY = 1;
     }
 
-    private void doLogin() {
+    private void doLogin(User user) {
+        // TODO: Hardcoded class
+        new UserSessionManager(getApplicationContext()).createLoginSession(user);
         Intent intent = new Intent(this, ParlorListView.class);
         startActivity(intent);
     }
@@ -338,7 +340,7 @@ public class LoginView extends AppCompatActivity implements LoaderCallbacks<Curs
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
      */
-    public class UserLoginTask extends AsyncTask<Void, Void, User> {
+    private class UserLoginTask extends AsyncTask<Void, Void, User> {
 
         private final String mEmail;
         private final String mPassword;
@@ -402,7 +404,7 @@ public class LoginView extends AppCompatActivity implements LoaderCallbacks<Curs
             } else if(!passwordEncrypted.equals(user.getPassword())) {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
             } else {
-                doLogin();
+                doLogin(user);
             }
             /*if (success) {
                 finish();
