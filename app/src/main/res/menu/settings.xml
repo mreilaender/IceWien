@@ -3,7 +3,7 @@
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="at.sayah.diploma.ParlorDetailsView">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_settings_sub"
         android:orderInCategory="100"
         android:title="@string/settings_menu"
         android:icon="@drawable/ic_setting_dark"

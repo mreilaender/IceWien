@@ -8,6 +8,14 @@
     <string name="parlor_address">Address:</string>
     <string name="placeholder">placeholder</string>
     <string name="closed">closed</string>
+
+    <string name="title_activity_login_view">Sign in</string>
+
+    <!-- Strings related to Appbar -->
+    <string name="action_login">Login</string>
+    <string name="settings_menu">Settings</string>
+    <string name="action_logout">Logout</string>
+
     <!-- Days -->
     <string name="monday">Monday</string>
     <string name="tuesday">Tuesday</string>
@@ -16,9 +24,6 @@
     <string name="friday">Friday</string>
     <string name="saturday">Saturday</string>
     <string name="sunday">Sunday</string>
-    <string name="action_login">Login</string>
-    <string name="settings_menu">Settings</string>
-    <string name="title_activity_login_view">Sign in</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
