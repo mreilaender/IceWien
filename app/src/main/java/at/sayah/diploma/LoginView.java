@@ -417,12 +417,7 @@ public class LoginView extends AppCompatActivity implements LoaderCallbacks<Curs
             } else {
                 doLogin(user);
             }
-            /*if (success) {
-                finish();
-            } else {
-                mPasswordView.setError(getString(R.string.error_incorrect_password));
-                mPasswordView.requestFocus();
-            }*/
+
             try {
                 source.close();
                 results.close();
