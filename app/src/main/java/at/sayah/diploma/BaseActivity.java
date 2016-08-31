@@ -8,6 +8,7 @@ import android.support.v7.widget.PopupMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import at.sayah.diploma.sessionmanager.UserSessionManager;
 
 /**
  * @author mreilaender

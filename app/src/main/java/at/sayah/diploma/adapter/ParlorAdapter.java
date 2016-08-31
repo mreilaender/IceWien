@@ -1,4 +1,4 @@
-package at.sayah.diploma;
+package at.sayah.diploma.adapter;
 
 import android.content.Context;
 import android.util.Log;

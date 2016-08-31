@@ -1,4 +1,4 @@
-package at.sayah.diploma;
+package at.sayah.diploma.sessionmanager;
 
 import android.content.Context;
 import android.content.SharedPreferences;

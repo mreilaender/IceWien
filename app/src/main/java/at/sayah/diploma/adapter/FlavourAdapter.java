@@ -1,4 +1,4 @@
-package at.sayah.diploma;
+package at.sayah.diploma.adapter;
 
 import android.content.Context;
 import android.support.annotation.LayoutRes;
@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import at.sayah.diploma.R;
 import at.sayah.diploma.entities.Flavour;
 import at.sayah.diploma.entities.Vote;
 

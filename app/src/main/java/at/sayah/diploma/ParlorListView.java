@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import at.sayah.diploma.adapter.ParlorAdapter;
 import at.sayah.diploma.entities.Parlor;
+import at.sayah.diploma.sessionmanager.ParlorSessionManager;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;
