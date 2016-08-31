@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -21,6 +22,7 @@ import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
 import com.j256.ormlite.stmt.QueryBuilder;
+import org.w3c.dom.Text;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -28,7 +30,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-public class ParlorDetailsView extends BaseActivity implements OnMapReadyCallback {
+public class ParlorDetailsView extends BaseActivity implements OnMapReadyCallback, View.OnClickListener {
 
     private static final String TAG = "ParlorDetailsView";
     private Parlor parlor;
@@ -47,8 +49,12 @@ public class ParlorDetailsView extends BaseActivity implements OnMapReadyCallbac
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ratingBar = (RatingBar) findViewById(R.id.parlor_rating_bar);
-        new GetVotesTask().execute();
+        //ratingBar = (RatingBar) findViewById(R.id.parlor_rating_bar);
+        //new GetVotesTask().execute();
+        //ratingBar.setOnClickListener(this);
+
+        TextView open_votes = (TextView) findViewById(R.id.open_votes);
+        open_votes.setOnClickListener(this);
 
         String address = parlor.getStreet() + " " + parlor.getStreet_number();
         ((TextView) findViewById(R.id.parlor_address)).setText(address);
@@ -90,39 +96,15 @@ public class ParlorDetailsView extends BaseActivity implements OnMapReadyCallbac
         }
     }
 
-    private void calculateMeanRating(List<Vote> votes) {
-        Iterator<Vote> iterator = votes.iterator();
-        float meanRating = 0f;
-        while (iterator.hasNext())
-            meanRating += iterator.next().getRanking();
-        meanRating = meanRating / votes.size();
-        ratingBar.setRating(meanRating);
-    }
-
-    private class GetVotesTask extends AsyncTask<Void, Void, Vote> {
-
-        @Override
-        protected Vote doInBackground(Void... voids) {
-            JdbcConnectionSource source = null;
-            try {
-                source = new JdbcConnectionSource(DatabaseCredentials.JDBC_URL);
-                    source.setUsername(DatabaseCredentials.USERNAME);
-                    source.setPassword(DatabaseCredentials.PASSWORD);
-                Dao<Vote, Date> votesDao = DaoManager.createDao(source, Vote.class);
-                QueryBuilder<Vote, Date> queryBuilder = votesDao.queryBuilder();
-                queryBuilder
-                        .where()
-                        .eq(Vote.PARLOR_ID_FIELD_NAME, parlor.getParlor_id());
-                CloseableIterator<Vote> results = votesDao.iterator(queryBuilder.prepare());
-                ArrayList<Vote> votes = new ArrayList<>();
-                while (results.hasNext())
-                    votes.add(results.next());
-                calculateMeanRating(votes);
-            } catch (SQLException e) {
-                Log.e(TAG, "Error while connecting to database: " + e.getMessage());
-                e.printStackTrace();
-            }
-            return null;
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.open_votes:
+                Intent intent = new Intent(this, FlavourListActivity.class);
+                intent.putExtra("parlor", new Gson().toJson(parlor));
+                startActivity(intent);
+                break;
         }
     }
+
 }

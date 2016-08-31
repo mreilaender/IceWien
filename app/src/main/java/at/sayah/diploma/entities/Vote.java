@@ -12,34 +12,21 @@ import java.util.Date;
 public class Vote {
     public final static String DATE_FIELD_NAME = "date";
     public final static String RANKING_FIELD_NAME = "ranking";
-    public final static String FLAVOUR_FIELD_NAME = "flavour";
-    public final static String UID_FIELD_NAME = "uid";
-    public final static String PARLOR_ID_FIELD_NAME = "parlor_id";
 
-    @DatabaseField(columnName = DATE_FIELD_NAME)
+    @DatabaseField(columnName = DATE_FIELD_NAME, id = true)
     private Date date;
 
     @DatabaseField(columnName = RANKING_FIELD_NAME)
     private int ranking;
 
-    @DatabaseField(columnName = FLAVOUR_FIELD_NAME)
-    private String flavour;
+    @DatabaseField(columnName = Flavour.FLAVOUR_ID_FIELD_NAME, foreign = true, foreignColumnName = Flavour.FLAVOUR_ID_FIELD_NAME)
+    private Flavour flavour;
 
-    @DatabaseField(columnName = UID_FIELD_NAME)
-    private int uid;
+    @DatabaseField(columnName = User.UID_FIELD_NAME, foreign = true, foreignColumnName = User.UID_FIELD_NAME)
+    private User uid;
 
-    @DatabaseField(columnName = PARLOR_ID_FIELD_NAME)
-    private int parlor_id;
 
     public Vote() {
-    }
-
-    public Vote(Date date, int ranking, String flavour, int uid, int parlor_id) {
-        this.date = date;
-        this.ranking = ranking;
-        this.flavour = flavour;
-        this.uid = uid;
-        this.parlor_id = parlor_id;
     }
 
     public Date getDate() {
@@ -58,27 +45,20 @@ public class Vote {
         this.ranking = ranking;
     }
 
-    public String getFlavour() {
+    public Flavour getFlavour() {
         return flavour;
     }
 
-    public void setFlavour(String flavour) {
+    public void setFlavour(Flavour flavour) {
         this.flavour = flavour;
     }
 
-    public int getUid() {
+    public User getUid() {
         return uid;
     }
 
-    public void setUid(int uid) {
+    public void setUid(User uid) {
         this.uid = uid;
     }
 
-    public int getParlor_id() {
-        return parlor_id;
-    }
-
-    public void setParlor_id(int parlor_id) {
-        this.parlor_id = parlor_id;
-    }
 }

@@ -250,16 +250,15 @@
                 android:layout_gravity="center_horizontal|bottom"
                 android:weightSum="1">
 
-                <RatingBar
-                    android:id="@+id/parlor_rating_bar"
-                    android:paddingTop="0dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center_horizontal"
-                    android:numStars="5"
-                    android:clickable="true"
-                    android:isIndicator="true"
-                    android:stepSize="0.1"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="@string/open_votes"
+                    android:id="@+id/open_votes"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:clickable="true"/>
 
                 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                           android:name="com.google.android.gms.maps.MapFragment"

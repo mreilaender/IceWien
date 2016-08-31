@@ -35,4 +35,10 @@
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+
+    <!-- ParlorDetailsView -->
+    <string name="open_votes">Open votes</string>
+
+    <!-- FlavourListActivity -->
+    <string name="title_flavour_list">Flavours</string>
 </resources>

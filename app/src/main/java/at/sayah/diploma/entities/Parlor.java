@@ -10,6 +10,18 @@ import java.io.Serializable;
  */
 @DatabaseTable(tableName = "parlor")
 public class Parlor {
+    public static final String PARLOR_ID_FIELD_NAME = "parlor_id";
+    public static final String NAME_FIELD_NAME = "name";
+    public static final String LATITUDE_FIELD_NAME = "latitude";
+    public static final String LONGITUDE_FIELD_NAME = "longitude";
+    public static final String OPENING_TIME_FIELD_NAME = "opening_time";
+    public static final String CLOSING_TIME_FIELD_NAME  = "closing_time";
+    public static final String STREET_FIELD_NAME  = "street";
+    public static final String STREET_NUMB_FIELD_NAME  = "street_numb";
+    public static final String ZIP_FIELD_NAME  = "zip";
+    public static final String PHONE_FIELD_NAME  = "phone";
+    public static final String MENU_FIELD_NAME  = "menu";
+
     @DatabaseField(columnName = "parlor_id", id = true)
     private int parlor_id;
 

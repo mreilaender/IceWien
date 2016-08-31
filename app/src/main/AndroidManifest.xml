@@ -46,6 +46,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="at.sayah.diploma.ParlorListView"/>
         </activity>
+        <activity
+            android:name=".FlavourListActivity"
+            android:label="@string/title_flavour_list"
+            android:parentActivityName=".ParlorDetailsView">
+        </activity>
     </application>
 
 </manifest>
