@@ -9,7 +9,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import at.sayah.diploma.entities.Parlor;
-import com.google.gson.Gson;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;

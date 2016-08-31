@@ -1,14 +1,8 @@
 package at.sayah.diploma;
 
-import android.content.Context;
-import android.database.Cursor;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import at.sayah.diploma.entities.Parlor;
-import com.j256.ormlite.android.AndroidDatabaseResults;
-import com.j256.ormlite.dao.CloseableIterable;
 import com.j256.ormlite.dao.CloseableIterator;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;

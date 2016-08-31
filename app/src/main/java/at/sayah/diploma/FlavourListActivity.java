@@ -11,7 +11,6 @@ import android.widget.TextView;
 import at.sayah.diploma.entities.Flavour;
 import at.sayah.diploma.entities.Parlor;
 import at.sayah.diploma.entities.Vote;
-import com.google.gson.Gson;
 import com.j256.ormlite.dao.CloseableIterator;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
@@ -33,6 +32,7 @@ public class FlavourListActivity extends AppCompatActivity {
     private Parlor parlor;
     private ListView flavour_list;
     private ParlorSessionManager parlorSessionManager;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

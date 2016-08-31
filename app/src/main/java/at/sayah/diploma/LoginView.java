@@ -31,7 +31,6 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import at.sayah.diploma.entities.Parlor;
 import at.sayah.diploma.entities.User;
 import com.j256.ormlite.dao.CloseableIterator;
 import com.j256.ormlite.dao.Dao;

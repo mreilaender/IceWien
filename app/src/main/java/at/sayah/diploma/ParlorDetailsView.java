@@ -2,33 +2,17 @@ package at.sayah.diploma;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import at.sayah.diploma.entities.Parlor;
-import at.sayah.diploma.entities.Vote;
 import com.google.android.gms.maps.*;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.gson.Gson;
-import com.j256.ormlite.dao.CloseableIterator;
-import com.j256.ormlite.dao.Dao;
-import com.j256.ormlite.dao.DaoManager;
-import com.j256.ormlite.jdbc.JdbcConnectionSource;
-import com.j256.ormlite.stmt.QueryBuilder;
-import org.w3c.dom.Text;
-
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
 
 public class ParlorDetailsView extends BaseActivity implements OnMapReadyCallback, View.OnClickListener {
 
@@ -97,7 +81,6 @@ public class ParlorDetailsView extends BaseActivity implements OnMapReadyCallbac
         switch (view.getId()) {
             case R.id.open_votes:
                 Intent intent = new Intent(this, FlavourListActivity.class);
-                intent.putExtra("parlor", new Gson().toJson(parlor));
                 startActivity(intent);
                 break;
         }

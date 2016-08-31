@@ -12,7 +12,7 @@ public class ParlorSessionManager {
     private Context context;
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
-
+    
     public static final String PREF_NAME = "UserSession";
     public static final String PARLOR_JSON = "parlorJson";
 
