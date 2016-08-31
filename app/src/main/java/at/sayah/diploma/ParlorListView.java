@@ -18,10 +18,14 @@ public class ParlorListView extends BaseActivity implements AdapterView.OnItemCl
     static final String TAG = "ParlorListView";
     static final String PACKAGE = "at.sayah.diploma";
 
+    private ParlorSessionManager parlorSessionManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.parlor_list);
+
+        parlorSessionManager = new ParlorSessionManager(getApplicationContext());
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -41,9 +45,8 @@ public class ParlorListView extends BaseActivity implements AdapterView.OnItemCl
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
         ArrayAdapter<Parlor> adapter = (ArrayAdapter<Parlor>) adapterView.getAdapter();
         Parlor parlor = adapter.getItem(position);
-        String json = new Gson().toJson(parlor);
+        parlorSessionManager.createParlorSession(parlor);
         Intent intent = new Intent(this, ParlorDetailsView.class);
-        intent.putExtra("parlor", json);
         startActivity(intent);
     }
 }

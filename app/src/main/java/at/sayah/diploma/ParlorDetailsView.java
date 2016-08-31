@@ -35,23 +35,19 @@ public class ParlorDetailsView extends BaseActivity implements OnMapReadyCallbac
     private static final String TAG = "ParlorDetailsView";
     private Parlor parlor;
     private RatingBar ratingBar;
+    private ParlorSessionManager parlorSessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.parlor_details);
 
-        Intent intent = getIntent();
-        String json = (String) intent.getExtras().get("parlor");
-        parlor = new Gson().fromJson(json, Parlor.class);
-        ((TextView) findViewById(R.id.parlor_name)).setText(parlor.getName());
+        parlorSessionManager = new ParlorSessionManager(getApplicationContext());
+        if ((parlor = parlorSessionManager.getParlor())!=null)
+            ((TextView) findViewById(R.id.parlor_name)).setText(parlor.getName());
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        //ratingBar = (RatingBar) findViewById(R.id.parlor_rating_bar);
-        //new GetVotesTask().execute();
-        //ratingBar.setOnClickListener(this);
 
         TextView open_votes = (TextView) findViewById(R.id.open_votes);
         open_votes.setOnClickListener(this);

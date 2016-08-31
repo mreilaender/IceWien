@@ -32,21 +32,18 @@ public class FlavourListActivity extends AppCompatActivity {
 
     private Parlor parlor;
     private ListView flavour_list;
-
+    private ParlorSessionManager parlorSessionManager;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.flavour_list);
 
+        parlorSessionManager = new ParlorSessionManager(getApplicationContext());
+
         flavour_list = (ListView) findViewById(R.id.flavour_list_view);
 
-        Intent intent = getIntent();
-        String json = (String) intent.getExtras().get("parlor");
-        if (json != null)
-            parlor = new Gson().fromJson(json, Parlor.class);
-
-        TextView heading = (TextView) findViewById(R.id.flavour_list_heading);
-        heading.setText(parlor.getName());
+        if ((parlor = parlorSessionManager.getParlor()) != null)
+            ((TextView) findViewById(R.id.flavour_list_heading)).setText(parlor.getName());
 
         new GetFlavours().execute();
     }
