@@ -142,6 +142,7 @@ public class FlavourListActivity extends AppCompatActivity {
 
     private void createAdapter(List<Flavour> flavours, HashMap<Flavour, List<Vote>> votes) {
         FlavourAdapter adapter = new FlavourAdapter(this, R.layout.flavour_list_view_row, flavours, votes);
+        flavour_list.setOnItemClickListener(adapter);
         flavour_list.setAdapter(adapter);
     }
 }

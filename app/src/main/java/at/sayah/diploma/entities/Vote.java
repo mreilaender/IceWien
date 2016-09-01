@@ -12,6 +12,8 @@ import java.util.Date;
 public class Vote {
     public final static String DATE_FIELD_NAME = "date";
     public final static String RANKING_FIELD_NAME = "ranking";
+    public static final String UID_FIELD_NAME = "uid";
+    public static final String FLAVOUR_ID_FIELD_NAME = "flavour_id";
 
     @DatabaseField(columnName = DATE_FIELD_NAME, id = true)
     private Date date;
@@ -19,10 +21,10 @@ public class Vote {
     @DatabaseField(columnName = RANKING_FIELD_NAME)
     private int ranking;
 
-    @DatabaseField(columnName = Flavour.FLAVOUR_ID_FIELD_NAME, foreign = true, foreignColumnName = Flavour.FLAVOUR_ID_FIELD_NAME)
+    @DatabaseField(columnName = FLAVOUR_ID_FIELD_NAME, foreign = true, foreignColumnName = Flavour.FLAVOUR_ID_FIELD_NAME)
     private Flavour flavour;
 
-    @DatabaseField(columnName = User.UID_FIELD_NAME, foreign = true, foreignColumnName = User.UID_FIELD_NAME)
+    @DatabaseField(columnName = UID_FIELD_NAME, foreign = true, foreignColumnName = User.UID_FIELD_NAME)
     private User uid;
 
 

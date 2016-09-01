@@ -38,4 +38,8 @@ public class UserSessionManager {
         editor.clear();
         editor.apply();
     }
+
+    public User getUser() {
+        return new Gson().fromJson(preferences.getString(USER_JSON, null), User.class);
+    }
 }

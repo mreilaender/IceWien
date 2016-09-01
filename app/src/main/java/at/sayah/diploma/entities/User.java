@@ -10,7 +10,6 @@ import com.j256.ormlite.table.DatabaseTable;
 public class User {
     public static final String UID_FIELD_NAME = "uid";
     public static final String EMAIL_FIELD_NAME = "email";
-    public static final String USERNAME_FIELD_NAME = "username";
     public static final String PASSWORD_FIELD_NAME = "password";
     public static final String ISADMIN_FIELD_NAME = "isAdmin";
 
@@ -19,9 +18,6 @@ public class User {
 
     @DatabaseField(columnName = EMAIL_FIELD_NAME)
     private String email;
-
-    @DatabaseField(columnName = USERNAME_FIELD_NAME)
-    private String username;
 
     @DatabaseField(columnName = PASSWORD_FIELD_NAME)
     private String password;
@@ -35,14 +31,6 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getPassword() {
@@ -59,5 +47,9 @@ public class User {
 
     public void setIsAdmin(int isAdmin) {
         this.isAdmin = isAdmin;
+    }
+
+    public int getUid() {
+        return uid;
     }
 }

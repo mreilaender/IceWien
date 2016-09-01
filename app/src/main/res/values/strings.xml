@@ -41,4 +41,8 @@
 
     <!-- FlavourListActivity -->
     <string name="title_flavour_list">Flavours</string>
+
+    <!-- ToastMessages -->
+    <string name="already_voted">You have already voted!</string>
+    <string name="thank_you_for_your_voting">Thank you for your voting!</string>
 </resources>
