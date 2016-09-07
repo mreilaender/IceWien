@@ -12,6 +12,7 @@ import at.sayah.diploma.entities.Parlor;
 import java.util.List;
 
 /**
+ *
  * @author mreilaender
  * @version 18.08.2016
  */

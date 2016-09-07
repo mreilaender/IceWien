@@ -125,7 +125,6 @@ public class FlavourAdapter extends ArrayAdapter<Flavour> implements RatingBar.O
         private float rating;
 
         private JdbcConnectionSource source;
-        private CloseableIterator<Vote> results;
 
         public SetRating(RatingBar ratingBar, float rating) {
             this.ratingBar = ratingBar;
@@ -166,7 +165,6 @@ public class FlavourAdapter extends ArrayAdapter<Flavour> implements RatingBar.O
             ratingBar.setIsIndicator(true);
             try {
                 source.close();
-                results.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }

@@ -81,6 +81,7 @@ public class ParlorDetailsView extends BaseActivity implements OnMapReadyCallbac
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.open_votes:
+                // Open the votes activity (FlavourListActivity)
                 Intent intent = new Intent(this, FlavourListActivity.class);
                 startActivity(intent);
                 break;

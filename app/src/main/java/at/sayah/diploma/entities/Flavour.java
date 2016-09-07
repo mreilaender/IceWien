@@ -4,6 +4,7 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 /**
+ * Entity Bean representing the table flavour in the database
  * @author mreilaender
  */
 @DatabaseTable(tableName = "flavour")
@@ -24,9 +25,6 @@ public class Flavour {
 
     @DatabaseField(columnName = Parlor.PARLOR_ID_FIELD_NAME, foreign = true, foreignColumnName = Parlor.PARLOR_ID_FIELD_NAME, uniqueCombo = true)
     private Parlor parlor_id;
-
-    public Flavour() {
-    }
 
     public String getName() {
         return name;

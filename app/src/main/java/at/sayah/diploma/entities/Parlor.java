@@ -4,6 +4,7 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 /**
+ * Entity Bean representing the table parlor in the database
  * @author mreilaender
  */
 @DatabaseTable(tableName = "parlor")
@@ -20,58 +21,38 @@ public class Parlor {
     public static final String PHONE_FIELD_NAME  = "phone";
     public static final String MENU_FIELD_NAME  = "menu";
 
-    @DatabaseField(columnName = "parlor_id", id = true)
+    @DatabaseField(columnName = PARLOR_ID_FIELD_NAME, id = true)
     private int parlor_id;
 
-    @DatabaseField(columnName = "name")
+    @DatabaseField(columnName = NAME_FIELD_NAME)
     private String name;
 
-    @DatabaseField(columnName = "latitude")
+    @DatabaseField(columnName = LATITUDE_FIELD_NAME)
     private String latitude;
 
-    @DatabaseField(columnName = "longitude")
+    @DatabaseField(columnName = LONGITUDE_FIELD_NAME)
     private String longitude;
 
-    @DatabaseField(columnName = "opening_time")
+    @DatabaseField(columnName = OPENING_TIME_FIELD_NAME)
     private String opening_time;
 
-    @DatabaseField(columnName = "closing_time")
+    @DatabaseField(columnName = CLOSING_TIME_FIELD_NAME)
     private String closing_time;
 
-    @DatabaseField(columnName = "street")
+    @DatabaseField(columnName = STREET_FIELD_NAME)
     private String street;
 
-    @DatabaseField(columnName = "street_numb")
+    @DatabaseField(columnName = STREET_NUMB_FIELD_NAME)
     private int street_number;
 
-    @DatabaseField(columnName = "zip")
+    @DatabaseField(columnName = ZIP_FIELD_NAME)
     private int zip;
 
-    @DatabaseField(columnName = "phone")
+    @DatabaseField(columnName = PHONE_FIELD_NAME)
     private String phone;
 
-    @DatabaseField(columnName = "menu")
+    @DatabaseField(columnName = MENU_FIELD_NAME)
     private String menu;
-
-    public Parlor() {
-    }
-
-    public Parlor(String name) {
-        this.name = name;
-    }
-
-    public Parlor(String name, String latitude, String longitude, String opening_time, String closing_time, String street, int street_number, int zip, String phone, String menu) {
-        this.name = name;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.opening_time = opening_time;
-        this.closing_time = closing_time;
-        this.street = street;
-        this.street_number = street_number;
-        this.zip = zip;
-        this.phone = phone;
-        this.menu = menu;
-    }
 
     public int getParlor_id() {
         return parlor_id;

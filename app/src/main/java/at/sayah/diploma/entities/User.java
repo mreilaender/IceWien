@@ -4,6 +4,7 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 /**
+ * Entity Bean representing the table user in the database
  * @author mreilaender
  */
 @DatabaseTable(tableName = "user")

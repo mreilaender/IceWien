@@ -6,6 +6,7 @@ import com.j256.ormlite.table.DatabaseTable;
 import java.util.Date;
 
 /**
+ * Entity Bean representing the table vote in the database
  * @author mreilaender
  */
 @DatabaseTable(tableName = "vote")
@@ -26,10 +27,6 @@ public class Vote {
 
     @DatabaseField(columnName = UID_FIELD_NAME, foreign = true, foreignColumnName = User.UID_FIELD_NAME)
     private User uid;
-
-
-    public Vote() {
-    }
 
     public Date getDate() {
         return date;
