@@ -79,7 +79,7 @@ public class FlavourAdapter extends ArrayAdapter<Flavour> implements RatingBar.O
                 flavour_rating.setOnRatingBarChangeListener(this);
 
             ratingBarFlavours.put(flavour_rating, flavour);
-            if(checkIfUserAlreadyVoted(flavour))
+            if(userSessionManager.isLoggedIn() && checkIfUserAlreadyVoted(flavour))
                 flavour_rating.setIsIndicator(true);
         } else
             Log.e(TAG, "Could not create view for ListView. Either item or view is null");

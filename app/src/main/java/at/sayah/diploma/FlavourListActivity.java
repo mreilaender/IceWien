@@ -133,7 +133,7 @@ public class FlavourListActivity extends AppCompatActivity {
             try {
                 source.close();
                 results.close();
-            } catch (SQLException e) {
+            } catch (SQLException | NullPointerException e) {
                 e.printStackTrace();
             }
             createAdapter(flavours, votesPerFlav);
